@@ -1,0 +1,571 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(353, 93%, 50%);
+  --first-color-alt: hsl(353, 93%, 46%);
+  --first-color-dark: hsl(353, 50%, 15%);
+  --second-color: hsl(52, 98%, 54%);
+  --title-color: hsl(353, 48%, 12%);
+  --text-color: hsl(353, 16%, 32%);
+  --text-color-light: hsl(353, 16%, 48%);
+  --white-color: hsl(24, 86%, 90%);
+  --body-color: hsl(24, 86%, 88%);
+  --container-color: hsl(24, 86%, 92%);
+  --shadow-small-img: drop-shadow(0 4px 16px hsla(353, 100%, 8%, .2));
+  --shadow-big-img: drop-shadow(0 8px 24px hsla(353, 100%, 8%, .2));
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Carter One", system-ui;
+  --biggest-font-size: 2.5rem;
+  --bigger-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 4.25rem;
+    --bigger-font-size: 2.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+button,
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-regular);
+  font-family: var(--second-font);
+  line-height: 120%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+.section_title {
+  text-align: center;
+  font-size: var(--bigger-font-size);
+  margin-bottom: 2rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+
+
+/*=============== SHELTER ===============*/
+.shelter_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+/* Statistik Tabel */
+.shelter.section {
+  background-color: var(--body-color);
+  color: #333;
+}
+
+.shelter_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styling untuk data statistik shelter */
+.home_data {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home_data h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.home_description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Styling untuk setiap item statistik */
+.home_description span {
+  font-weight: bold;
+  color: #555;
+}
+
+.home_description div {
+  margin-bottom: 12px;
+}
+
+/* Styling untuk tabel daftar hewan */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #4CAF50;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+}
+
+td {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Styling untuk kolom aksi */
+td a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-right: 8px;
+}
+
+td a:hover {
+  background-color: #0056b3;
+}
+
+td a:active {
+  background-color: #004085;
+}
+
+td a:nth-child(2) {
+  background-color: #dc3545;
+}
+
+td a:nth-child(2):hover {
+  background-color: #c82333;
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+  /* Statistik Shelter */
+  .home_data h2 {
+      font-size: 1.5rem;
+  }
+
+  .home_description {
+      font-size: 1rem;
+  }
+
+  /* Daftar Hewan */
+  table, th, td {
+      display: block;
+      width: 100%;
+  }
+
+  th, td {
+      text-align: right;
+      padding: 10px;
+  }
+
+  td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      padding-right: 10px;
+      display: inline-block;
+      width: 50%;
+  }
+
+  td img {
+      display: block;
+      margin: 0 auto;
+  }
+
+  /* Menyembunyikan statistik yang terlalu panjang di layar kecil */
+  .home_description span {
+      display: block;
+      margin-top: 5px;
+  }
+}
+
+
+
+/* Tambah Hewan Shelter */
+.hewan-list {
+  margin: 20px;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Judul tabel */
+.hewan-list h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Styling untuk tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Styling untuk header tabel */
+thead {
+  background-color: #4CAF50;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+}
+
+td img {
+  border-radius: 4px;
+  max-width: 100px;
+  height: auto;
+}
+
+/* Styling untuk kolom aksi Edit dan Hapus */
+td a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-right: 8px;
+  transition: background-color 0.3s ease;
+}
+
+td a:hover {
+  background-color: #0056b3;
+}
+
+td a:active {
+  background-color: #004085;
+}
+
+/* Tombol Hapus */
+td a:nth-child(2) {
+  background-color: #dc3545;
+}
+
+td a:nth-child(2):hover {
+  background-color: #c82333;
+}
+
+/* Hover pada baris tabel */
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Overlay Background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent Black */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Pastikan z-index cukup tinggi */
+}
+
+/* Dialog Box */
+.dialog {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.overlay button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.overlay button:hover {
+  background-color: #e53935;
+}
+
+.overlay #btnNo {
+  background-color: #4CAF50;
+}
+
+.overlay #btnNo:hover {
+  background-color: #45a049;
+}
+
+
+/* Form Container */
+.form_tambah_hewan {
+  background-color: white;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.tambah_hewan_title {
+  margin: .5rem;
+  text-align: center;
+}
+
+/* Form Labels */
+.form_tambah_hewan label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Form Inputs */
+.form_tambah_hewan input[type="text"],
+.form_tambah_hewan select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Form File Input */
+.form_tambah_hewan input[type="file"] {
+  margin-bottom: 1.5rem;
+}
+
+/* Submit Button */
+.form_tambah_hewan button[type="submit"] {
+  display: inline-flex;
+  width: 200px;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  padding: 1rem 1.5rem;
+  font-weight: var(--font-semi-bold);
+  border-radius: 4rem;
+  box-shadow: 0 8px 24px hsla(353, 100%, 40%, .4);
+  transition: background-color .4s;
+  cursor: pointer;
+}
+
+.form_tambah_hewan button[type="submit"]:hover {
+  background-color: var(--first-color-alt);
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width:  .6rem;
+  background-color: hsl(24, 32%, 75%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(24, 32%, 65%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(24, 32%, 55%);
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 16px hsla(353, 100%, 8%, .2);
+  color: var(--title-color);
+  display: inline-flex;
+  padding: 6px;
+  font-size: 1.25rem;
+  border-radius: .5rem;
+  z-index: var(--z-tooltip);
+  transition: bottom .4s, transform .4s;
+}
+
+.scrollup:hover {
+  transform: translateY(-.5rem);
+}
+
+/* Show Scroll Up */
+.show-scroll {
+  bottom: 3rem !important;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
+}
+
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+  table, th, td {
+      display: block;
+      width: 100%;
+  }
+
+  th, td {
+      text-align: right;
+      padding: 10px;
+  }
+
+  td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      padding-right: 10px;
+      display: inline-block;
+      width: 50%;
+  }
+
+  td img {
+      display: block;
+      margin: 0 auto;
+  }
+
+  .hewan-list h2 {
+      font-size: 1.5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  /* .shelter_container {
+    padding-block: 5rem 4rem;
+  } */
+
+  .scrollup {
+    right: 3rem;
+  }
+
+}
+
+@media screen and (min-width: 1520px) {
+  .container {
+    max-width: 1400px; /* Menambah lebar container */
+  }
+
+  /* Jika perlu, Anda dapat menyesuaikan padding di elemen lain untuk lebih banyak ruang */
+  .main {
+    padding-block: 5rem 6rem; /* Menambah ruang di container */
+  }
+}
+
+

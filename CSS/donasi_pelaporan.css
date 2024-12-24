@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@100..900&display=swap");
+
+:root {
+    --accent-color: hsl(206, 93%, 50%);
+    --accent-color-hover: hsl(206, 93%, 46%);
+    --base-color: hsl(197, 86%, 90%);
+    --text-color: hsl(206, 48%, 12%);
+    --background-color: hsl(197, 86%, 95%);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --input-color: hsl(197, 86%, 92%);
+    --font-family: "Montserrat", sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--base-color);
+    color: var(--text-color);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.wrapper {
+    background-color: var(--background-color);
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px var(--shadow-color);
+    margin: 20px auto;
+}
+
+h1 {
+    font-family: "Carter One", cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--font-family);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid var(--text-color);
+    transition: 0.4s ease;
+}
+
+table th {
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    text-align: center;
+}
+
+table td {
+    text-align: center;
+}
+
+table tr:hover {
+    background-color: var(--accent-color-hover);
+    color: var(--base-color);
+}
+
+.message {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 20px;
+    background-color: var(--input-color);
+    border-radius: 10px;
+    margin: 20px auto;
+    color: var(--text-color);
+    width: 100%;
+    max-width: 600px;
+}
+
+.wrapper a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--accent-color);
+    transition: color 0.3s;
+}
+
+.wrapper a:hover {
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+button:hover {
+    background-color: var(--accent-color-hover);
+}

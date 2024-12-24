@@ -1,0 +1,315 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(353, 93%, 50%);
+  --first-color-alt: hsl(353, 93%, 46%);
+  --first-color-dark: hsl(353, 50%, 15%);
+  --second-color: hsl(52, 98%, 54%);
+  --title-color: hsl(353, 48%, 12%);
+  --text-color: hsl(353, 16%, 32%);
+  --text-color-light: hsl(353, 16%, 48%);
+  --white-color: hsl(24, 86%, 90%);
+  --body-color: hsl(24, 86%, 88%);
+  --container-color: hsl(24, 86%, 92%);
+  --shadow-small-img: drop-shadow(0 4px 16px hsla(353, 100%, 8%, .2));
+  --shadow-big-img: drop-shadow(0 8px 24px hsla(353, 100%, 8%, .2));
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Carter One", system-ui;
+  --biggest-font-size: 2.5rem;
+  --bigger-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 4.25rem;
+    --bigger-font-size: 2.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+button,
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-regular);
+  font-family: var(--second-font);
+  line-height: 120%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+.section_title {
+  text-align: center;
+  font-size: var(--bigger-font-size);
+  margin-bottom: 2rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+    transition: box-shadow .4s;
+}
+
+.nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
+    font-family: var(--second-font);
+    color: var(--title-color);
+}
+
+.nav_logo img{
+    width: 24px;
+}
+
+.nav_toggle,
+.nav_close {
+    display: flex;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor:pointer;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1150px) {
+    .nav_menu {
+        position: fixed;
+        top: -120%;
+        left: 0;
+        background-color: var(--body-color);
+        width: 100%;
+        padding-block: 4.5rem 3.5rem;
+        box-shadow: 0 4px 16px hsla(353, 100%, 8%, .1);
+        transition: top .4s;
+    }
+    
+}
+
+.nav_list {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.nav_link {
+    position: relative;
+    color: var(--title-color);
+    font-family: var(--second-font);
+}
+
+.nav_link::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: var(--first-color);
+    position: absolute;
+    left: 0;
+    bottom: -.5rem;
+    transition: .4s;
+}
+
+.nav_link:hover::after {
+    width: 100%;
+}
+
+.nav_link.login {
+  background-color: var(--first-color);
+  color: var(--white-color);
+  padding: .75rem 1.5rem;
+  font-weight: var(--font-semi-bold);
+  border-radius: 2rem;
+  transition: background-color .3s, box-shadow .4s; 
+}
+
+.nav_link.user img{
+  width: 2.5rem;
+  background-color: var(--first-color-alt);
+  border-radius: 4rem;
+}
+
+.nav_link.login:hover,
+.nav_link.user img:hover {
+  background-color: var(--first-color-alt);
+  box-shadow: 0 8px 24px hsla(353, 100%, 40%, .4);
+}
+
+.nav_link.login:hover::after,
+.nav_link.user:hover::after {
+  width: 0;
+}
+
+.nav_close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    cursor: pointer;
+}
+
+/* Show menu */
+.tampil {
+    top: 0;
+}
+
+/* Add shadow header */
+.shadow-header {
+  box-shadow: 0 4px 16px hsla(353, 100%, 8%, .1)
+}
+
+/* Active link */
+.active-link::after{
+  width: 100%;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+    .container {
+      margin-inline: 1rem;
+    }
+  }
+  
+  /* For large devices */
+  @media screen and (min-width: 1150px) {
+    .nav_logo {
+      font-size: var(--h2-font-size);
+    }
+  
+    .nav_logo img{
+        width: 48px;
+    }
+  
+    .container {
+      margin-inline: auto;
+    }
+  
+    .section {
+      padding-block: 7rem 2rem;
+    }
+  
+    .section_title {
+      margin-bottom: 4rem;
+    }
+  
+    .nav {
+      height: calc(var(--header-height) + 2rem);
+    }
+  
+    .nav_toggle,
+    .nav_close {
+      display: none;
+    }
+  
+    .nav_list {
+      flex-direction: row;
+      column-gap: 4rem;
+      align-items: center;
+    }
+  }
+  
+  @media screen and (min-width: 1520px) {
+    .container {
+      max-width: 1400px; /* Menambah lebar container */
+    }
+
+  }

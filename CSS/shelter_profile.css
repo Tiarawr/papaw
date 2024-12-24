@@ -1,0 +1,246 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(353, 93%, 50%);
+  --first-color-alt: hsl(353, 93%, 46%);
+  --first-color-dark: hsl(353, 50%, 15%);
+  --second-color: hsl(52, 98%, 54%);
+  --title-color: hsl(353, 48%, 12%);
+  --text-color: hsl(353, 16%, 32%);
+  --text-color-light: hsl(353, 16%, 48%);
+  --white-color: hsl(24, 86%, 90%);
+  --body-color: hsl(24, 86%, 88%);
+  --container-color: hsl(24, 86%, 92%);
+  --shadow-small-img: drop-shadow(0 4px 16px hsla(353, 100%, 8%, .2));
+  --shadow-big-img: drop-shadow(0 8px 24px hsla(353, 100%, 8%, .2));
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Carter One", system-ui;
+  --biggest-font-size: 2.5rem;
+  --bigger-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 4.25rem;
+    --bigger-font-size: 2.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/* Reset dasar untuk memulai dengan grid layout yang bersih */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+
+/* Main container */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* Form Styling */
+.profile_container {
+  display: flex;
+  flex-direction: column;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  column-gap: 3rem;
+}
+
+label {
+  font-size: 1.1em;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Tombol Login */
+button .button {
+  display: inline-flex;
+  width: 100%;
+  padding: 1rem 4rem;
+  background-color: var(--first-color);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px hsla(353, 100%, 40%, .4);
+  transition: background-color 0.3s ease;
+}
+
+button .button:hover {
+  background-color: var(--first-color-alt);
+}
+
+/* Riwayat Styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.laporan_history li,
+.adopsi_history li,
+.donasi_history li,
+.artikel_history li {
+  padding: 10px;
+  background-color: #f4f4f4;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.laporan_history li:hover,
+.adopsi_history li:hover,
+.donasi_history li:hover,
+.artikel_history li:hover {
+  background-color: #e0e0e0;
+}
+
+/* Pesan Update */
+p {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+p[style*="color: green"] {
+  color: #4CAF50;
+}
+
+p[style*="color: red"] {
+  color: #f44336;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+option {
+  background-color: #fff;
+  color: #333;
+}
+
+option:hover {
+  background-color: #f2f2f2;
+}
+
+/* Responsif Design */
+@media (min-width: 768px) {
+  form input[type="text"], form textarea {
+      width: 100%;
+  }
+
+ .laporan_history_container, .adopsi_history_container, .donasi_history_container, .artikel_history_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+      padding-top: 0; /* Disable fixed header padding */
+  }
+  h2 {
+      font-size: 1.3em;
+  }
+}

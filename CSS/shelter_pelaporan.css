@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@100..900&display=swap");
+
+:root {
+    --accent-color: hsl(353, 93%, 50%);
+    --accent-color-hover: hsl(353, 93%, 46%);
+    --base-color: hsl(24, 86%, 90%);
+    --text-color: hsl(353, 48%, 12%);
+    --background-color: hsl(24, 86%, 95%);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --input-color: hsl(24, 86%, 92%);
+    --font-family: "Montserrat", sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--base-color);
+    color: var(--text-color);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.wrapper {
+    background-color: var(--background-color);
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+h1 {
+    font-family: "Carter One", cursive;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid var(--text-color);
+    transition: 0.4s ease;
+}
+
+table th {
+    background-color: var(--accent-color);
+    color: var(--base-color);
+}
+
+table tr:hover {
+    background-color: var(--accent-color-hover);
+    color: var(--base-color);
+}
+
+form {
+    display: flex;
+    gap: 10px;
+}
+
+form select {
+    padding: 5px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+}
+
+form button {
+    padding: 5px 10px;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: var(--accent-color-hover);
+}

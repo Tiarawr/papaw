@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@100..900&display=swap");
+
+:root {
+    --accent-color: hsl(353, 93%, 50%);
+    --accent-color-hover: hsl(353, 93%, 46%);
+    --base-color: hsl(24, 86%, 90%);
+    --text-color: hsl(353, 48%, 12%);
+    --input-color: hsl(0, 0%, 100%);
+    --background-color: rgba(255, 255, 255, 0.05); 
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+    /*========== Font and typography ==========*/
+    --body-font: "Montserrat", sans-serif;
+    --second-font: "Carter One", system-ui;
+    --biggest-font-size: 2.5rem;
+    --bigger-font-size: 1.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--body-font);
+    font-size: 12pt;
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Body dan halaman utama */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--base-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container untuk halaman login */
+.login_container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* Tombol kembali */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.back-button i {
+    margin-right: 8px;
+}
+
+/* Form login */
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Judul form */
+.wrapper h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Group input dan label */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.password-toggle i {
+    font-size: 20px;
+    color: #e8eaed;
+}
+
+
+/* Label untuk input */
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Input field styling */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    padding-left: 40px;  /* Space for label icon */
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Efek saat input difokuskan */
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+/* Tombol Login */
+button {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px hsla(353, 100%, 40%, .4);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Pesan error */
+p {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Link pendaftaran */
+p a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Gambar */
+.image {
+    display: none;
+}
+
+/* Responsif untuk perangkat desktop dan tablet */
+@media (min-width: 768px) {
+    .login_container {
+        flex-direction: row;
+    }
+
+    .wrapper {
+        flex: 0.6;
+        padding: 30px;
+    }
+
+    .image {
+        display: block;
+        flex: 0.4;
+        margin-left: 20px;
+    }
+
+    .image img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 15px;
+    }
+
+    .image {
+        display: none;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
